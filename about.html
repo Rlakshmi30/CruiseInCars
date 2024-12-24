@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About CruiseInCars</title>
+    <style>
+        :root {
+            --bg-color: #f9f9f9;
+            --text-color: #333;
+            --container-bg: #fff;
+            --box-shadow: rgba(0, 0, 0, 0.1);
+            --link-bg: rgb(71, 29, 29);
+            --link-hover-bg: rgb(105, 29, 29);
+        }
+
+        body.dark-mode {
+            --bg-color: #121212;
+            --text-color: #f9f9f9;
+            --container-bg: #1e1e1e;
+            --box-shadow: rgba(255, 255, 255, 0.1);
+            --link-bg: rgb(97, 40, 40);
+            --link-hover-bg: rgb(94, 32, 32);
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: var(--container-bg);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px var(--box-shadow);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            color: var(--text-color);
+            cursor: pointer;
+            padding: 10px;
+            background: var(--link-bg);
+            color: #fff;
+            border-radius: 4px;
+            margin: 15px 0 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        h2:hover {
+            background: var(--link-hover-bg);
+            transform: scale(1.02);
+        }
+
+        .dropdown-symbol {
+            margin-left: auto;
+            font-size: 16px;
+            transition: transform 0.3s;
+        }
+
+        .dropdown-symbol.rotate {
+            transform: rotate(180deg);
+        }
+
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid var(--link-bg);
+            border-radius: 4px;
+            background: var(--container-bg);
+            margin-top: 5px;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            text-indent: -15px;
+        }
+
+        ul li:before {
+            content: "✔ ";
+            color: var(--link-bg);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            color: #fff;
+            background: var(--link-bg);
+            padding: 10px 15px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--link-hover-bg);
+        }
+
+        .toggle-container {
+            display: flex;
+            justify-content: center;
+            margin: 15px 0;
+        }
+
+        .toggle-container button {
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            background: var(--link-bg);
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .toggle-container button:hover {
+            background: var(--link-hover-bg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>About CruiseInCars</h1>
+
+        <h2 onclick="toggleContent('how-it-works')">
+            How Our Website Works
+            <span class="dropdown-symbol">&#9662;</span>
+        </h2>
+        <div id="how-it-works" class="content">
+            <p>
+                CruiseInCars is your one-stop solution for car rentals. Our user-friendly platform allows you to explore
+                a wide range of vehicles, compare prices, and book your preferred car with ease. Whether you're planning
+                a short trip or a long journey, we make renting a car hassle-free.
+            </p>
+        </div>
+
+        <h2 onclick="toggleContent('what-we-provide')">
+            What We Provide
+            <span class="dropdown-symbol">&#9662;</span>
+        </h2>
+        <div id="what-we-provide" class="content">
+            <ul>
+                <li>A wide selection of cars, including Economy, Luxury, Sports, E-Cars, and Convertibles.</li>
+                <li>Flexible rental options tailored to your needs.</li>
+                <li>Competitive pricing with no hidden costs.</li>
+                <li>Comprehensive customer support to assist you at every step.</li>
+            </ul>
+        </div>
+
+        <h2 onclick="toggleContent('where-available')">
+            Where Are We Available?
+            <span class="dropdown-symbol">&#9662;</span>
+        </h2>
+        <div id="where-available" class="content">
+            <p>
+                CruiseInCars operates in major cities across the country. From bustling metros to serene towns, you can
+                find us wherever you need a reliable car rental service. Explore the availability in your region through
+                our interactive map on the homepage.<br>Here are the locations where we are available for you.
+            </p>
+            <ul>
+                <li>Bhubaneswar</li>
+                <li>Cuttack</li>
+                <li>Baleswor</li>
+                <li>Delhi</li>
+                <li>Mumbai</li>
+                <li>Nagpur</li>
+                <li>Rajasthan</li>
+                <li>Noida</li>
+                <li>Hyderabad</li>
+                <li>Jammu and Kashmir</li>
+            </ul>
+            <p>We are trying to reach every place for you. So, please stay with us.</p>
+        </div>
+
+        <h2 onclick="toggleContent('services')">
+            Services We Provide
+            <span class="dropdown-symbol">&#9662;</span>
+        </h2>
+        <div id="services" class="content">
+            <ul>
+                <li>Self-drive car rentals for individuals and families.</li>
+                <li>Corporate car rentals for businesses and organizations.</li>
+                <li>Chauffeur-driven luxury cars for special occasions.</li>
+                <li>Eco-friendly electric car options.</li>
+                <li>Flexible pickup and drop-off services.</li>
+            </ul>
+        </div>
+
+        <h2 onclick="toggleContent('contact')">
+            Contact and Social Media
+            <span class="dropdown-symbol">&#9662;</span>
+        </h2>
+        <div id="contact" class="content">
+            <p>
+                For any inquiries or support, feel free to contact us:
+            </p>
+            <p>
+                <strong>Email:</strong> support@cruiseincars.com <br>
+                <strong>Phone:</strong> +1 234 567 8901
+            </p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/Carindia/" target="_blank">Facebook</a>
+                <a href="https://x.com/CARandDRIVER" target="_blank">Twitter</a>
+                <a href="https://www.instagram.com/car/?hl=en" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="toggle-container">
+        <button id="toggle-dark-mode">Change To Dark Mode</button>
+    </div>
+
+    <script>
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            const header = content.previousElementSibling; // Get the corresponding h2
+            const symbol = header.querySelector('.dropdown-symbol');
+
+            // Toggle content display
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+
+            // Toggle symbol rotation
+            symbol.classList.toggle('rotate');
+        }
+
+        const toggleButton = document.getElementById('toggle-dark-mode');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            toggleButton.textContent = document.body.classList.contains('dark-mode')
+                ? 'Change To Light Mode'
+                : 'Change To Dark Mode';
+        });
+    </script>
+</body>
+
+</html>
